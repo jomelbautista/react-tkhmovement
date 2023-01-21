@@ -9,7 +9,6 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -17,6 +16,7 @@ body {
   font-family: 'Roboto', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 #root {
@@ -25,13 +25,10 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  scroll-behavior: smooth;
 
   /* Variable Styles */
   --c-brand: #ea6103;
   --c-brand-rgb: 255, 165, 0;
-  --c-brand-alt: #115833;
-  --c-brand-alt-rgb: 17, 88, 51;
   --c-black: #333;
   --c-body: #838383;
   --transition: all .6s cubic-bezier(.165, .84, .44, 1);
@@ -121,26 +118,22 @@ a.btn.btn-brand {
 .home {
   width: 100%;
   flex-grow: 1;
-  overflow-y: auto;
 }
 
-.about, .clinic-information, .services-scheduler, .videos, .testimonials {
-  padding: 4rem .25rem;
+.about, .clinic-information, .services-scheduler, .testimonials {
+  padding: 4rem .25rem 3rem .25rem;
+}
+
+.videos {
+  padding: 7rem .25rem;
 }
 
 /* Navbar */
-.navbar-container {
-  width: 100%;
-  max-width: 1200px;
-  flex-wrap: nowrap;
-}
-
 .navbar {
   padding: 2rem 0;
   transition: var(--transition);
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  z-index: 0 important!;
   width: 100%;
 }
 

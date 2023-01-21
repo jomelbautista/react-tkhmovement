@@ -6,7 +6,7 @@ import { FaGoogle, FaInstagram, FaYelp } from "react-icons/fa"
 
 const CustomNav = () => {
   return (
-    <Navbar expand="lg" id="navbar" className="fixed-top">
+    <Navbar expand="lg" id="navbar" fixed="top">
       <Container className="navbar-container justify-content-between align-items-center">
         <Navbar.Brand href="#" className="brand-img-container">
             <img src={sbrpLogo} alt="Logo" />
@@ -14,12 +14,14 @@ const CustomNav = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
+            {/* <Scrollspy items={ ['home', 'about', 'clinic-information', 'services-scheduler', 'videos', 'testimonials']} currentClassName="active"> */}
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#clinic-information">Clinic Information</Nav.Link>
             <Nav.Link href="#services-scheduler">Services & Scheduler</Nav.Link>
             <Nav.Link href="#videos">Videos</Nav.Link>
             <Nav.Link href="#testimonials">Testimonials</Nav.Link>
+            {/* </Scrollspy> */}
           </Nav>
           <Nav className="ms-auto">
           <ul className="d-flex my-auto">
