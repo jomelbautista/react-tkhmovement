@@ -1,13 +1,510 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  flex-grow: 1;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
+
+  /* Variable Styles */
+  --c-brand: #ea6103;
+  --c-brand-rgb: 255, 165, 0;
+  --c-brand-alt: #115833;
+  --c-brand-alt-rgb: 17, 88, 51;
+  --c-black: #333;
+  --c-body: #838383;
+  --transition: all .6s cubic-bezier(.165, .84, .44, 1);
+  --shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* App */
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Util */
+/* Text brand */
+.text-brand {
+  color: var(--c-brand);
+}
+
+/* Anchor tags */
+a {
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: .75rem;
+}
+
+/* Section */
+.section-title {
+  margin: 2rem 0;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: var(--c-brand);
+  text-decoration-thickness: 1px;
+}
+
+.section-description {
+  font-size: .9rem;
+  color: var(--c-body);
+  text-align: center;
+}
+
+/* Button */
+.btn {
+  font-family: inherit;
+}
+
+.btn.btn-brand, .btn.btn-brand:focus {
+  padding: 1rem;
+  background-color: var(--c-brand);
+  color: white;
+  border: 1px solid var(--c-brand);
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.btn.btn-brand:hover {
+  background-color: white;
+  color: var(--c-brand);
+}
+
+a.btn.btn-brand {
+  font-size: 1rem;
+  border-radius: 1rem;
+}
+
+/* Section Connector */
+.section-connector {
+  position: relative;
+  z-index: 10;
+}
+
+.section-connector::after {
+  content: '';
+  width: 1px;
+  height: 100px;
+  background-color: var(--c-brand);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+}
+
+/* Sections */
+.home {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.about, .clinic-information, .services-scheduler, .videos, .testimonials {
+  padding: 4rem .25rem;
+}
+
+/* Navbar */
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.navbar {
+  padding: 2rem 0;
+  transition: var(--transition);
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 0 important!;
+  width: 100%;
+}
+
+.navbar .navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--c-dark);
+}
+
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+  color: var(--c-brand);
+}
+
+.navbar-brand img {
+  height: 30px;
+  object-fit: contain;
+}
+
+.brand-img-container {
+  width: 100%;
+  object-fit: contain;
+}
+
+.brand-img-container img {
+  width: 100%;
+  height: auto;
+}
+
+.navbar-brand img {
+  height: 30px;
+  object-fit: contain;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: var(--c-brand);
+  color: white;
+  border: 1px solid var(--c-brand);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: .5rem;
+  border-radius: 50%;
+}
+
+.social-icon:hover {
+  background-color: white;
+  color: var(--c-brand);
+}
+
+/* Showcase */
+.showcase {
+  position: relative;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.showcase video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.95;
+}
+
+.showcase-text-container {
+  z-index: 2;
+  position: relative;
+  text-align: center;
+}
+
+.showcase-text-container h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1rem;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 4px #333;
+}
+
+.showcase-text-container p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  max-width: 65%;
+  text-align: center;
+  margin: 1rem auto;
+  text-shadow: 0px 0px 4px #333;
+}
+
+/* About */
+.about .text-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.about p {
+  font-size: .85rem;
+}
+
+.headshot-container {
+  width: 85%;
+  max-width: 15rem;
+}
+
+.headshot-container img {
+  width: 100%;
+  height: auto;
+}
+
+.about-card {
+  position: relative;
+  padding: 0rem 1rem 2rem 2rem;
+}
+
+.about-card::before {
+  content: '';
+  height: 100%;
+  width: 1px;
+  background-color: rgba(var(--c-brand-rgb), 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.about-card::after {
+  content: '';
+  height: 14px;
+  width: 14px;
+  background-color: var(--c-brand);
+  position: absolute;
+  left: -7px;
+  top: 0;
+}
+
+.about-card h2 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.about-card p {
+  font-size: .85rem;
+}
+
+.about-card ul {
+  list-style-type: circle;
+}
+
+/* Clinic Information */
+.information {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  text-align: center;
+  word-wrap: break-word;
+  padding: 1rem;
+}
+
+.information .icon-container {
+  width: 2rem;
+  margin-bottom: 1rem;
+}
+
+.information .icon {
+  width: 100%;
+  height: auto;
+}
+
+.information h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.information p {
+  font-size: .75rem;
+  font-weight: 400;
+}
+
+/* Services & Scheduler */
+
+.service {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.service .title {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.service p {
+  font-size: .75rem;
+}
+
+.custom-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--c-black);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.custom-link:hover {
+  color: var(--c-brand);
+}
+
+.custom-link span {
+  font-weight: 700;
+}
+
+.custom-link span {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c-brand);
+  border-radius: 100px;
+  color: white;
+  margin-left: 6px;
+  transition: var(--transition);
+}
+
+.custom-link:hover span {
+  transform: translateX(5px);
+}
+
+.small {
+  margin-bottom: 1.5rem;
+}
+
+.small .title {
+  font-size: 1.25rem;
+}
+
+/* Video */
+.video {
+  padding-bottom: .75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+  width: 100%;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: auto;
+}
+
+.video .title {
+  font-size: 1.25rem;
+}
+
+.video p {
+  font-size: .75rem;
+}
+
+/* Testimonials */
+.testimonials a {
+  font-size: .9rem;
+  text-decoration: none;
+}
+
+.testimonials a:hover {
+  color: var(--c-brand);
+}
+
+.testimonial-body-container {
+  height: 15rem;
+  overflow-y: auto;
+  word-wrap: break-word;
+  padding: 0 .5rem;
+}
+
+.testimonial .name {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.testimonial .stars {
+  color: var(--c-brand);
+}
+
+.testimonial .date {
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.testimonial .text {
+  font-size: .75rem;
+  font-weight: 400;
+}
+
+#testimonials .carousel-control-prev-icon, #testimonials .carousel-control-next-icon {
+  background-color: var(--c-brand);
+}
+
+#testimonials .carousel-indicators {
+  display: none;
+}
+
+/* Footer */
+.footer {
+  background-color: black;
+  margin-bottom: 0;
+  padding: 1rem;
+}
+
+.footer-title {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footer h4 {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer p, .footer li, .footer li a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: .75rem;
+  text-decoration: none;
+}
+
+.footer li a:hover {
+  color: var(--c-brand);
+}
+
+/* Media Queries */
+@media (min-width: 610px) {
+  .showcase-text-container h1 {
+    font-size: 2.5rem;
+  }
+  
+  .showcase-text-container p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .showcase-text-container h1 {
+    font-size: 3rem;
+  }
+  
+  .showcase-text-container p {
+    font-size: 2rem;
+  }
 }
