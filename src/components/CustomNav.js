@@ -29,7 +29,7 @@ const CustomNav = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="social-icon" href="https://www.instagram.com/dr.takhuynh.dc/" target="_blank" rel="noopener noreferrer">
+                <a className="social-icon" href="https://www.yelp.com/biz/south-bay-rehab-and-performance-cupertino-5" target="_blank" rel="noopener noreferrer">
                   <FaYelp />
                 </a>
               </li>
