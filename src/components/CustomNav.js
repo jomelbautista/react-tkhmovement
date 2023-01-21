@@ -8,10 +8,8 @@ const CustomNav = () => {
   return (
     <Navbar expand="lg" id="navbar" className="fixed-top">
       <Container className="navbar-container justify-content-between align-items-center">
-        <Navbar.Brand href="#">
-          <div className="brand-img-container">
+        <Navbar.Brand href="#" className="brand-img-container">
             <img src={sbrpLogo} alt="Logo" />
-          </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

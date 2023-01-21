@@ -159,13 +159,13 @@ a.btn.btn-brand {
 }
 
 .brand-img-container {
-  width: 75%;
   object-fit: contain;
 }
 
 .brand-img-container img {
   width: 100%;
   height: auto;
+  max-width: 120px;
 }
 
 .navbar-brand img {
