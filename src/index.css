@@ -132,6 +132,7 @@ a.btn.btn-brand {
 .navbar-container {
   width: 100%;
   max-width: 1200px;
+  flex-wrap: nowrap;
 }
 
 .navbar {
@@ -158,7 +159,7 @@ a.btn.btn-brand {
 }
 
 .brand-img-container {
-  width: 100%;
+  width: 75%;
   object-fit: contain;
 }
 
