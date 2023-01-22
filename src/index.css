@@ -35,6 +35,11 @@ body {
   --shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
 }
 
+input,
+button {
+  font: inherit;
+}
+
 /* App */
 .App {
   width: 100%;
@@ -222,7 +227,7 @@ a.btn.btn-brand {
   font-weight: 700;
   line-height: 1rem;
   text-transform: uppercase;
-  text-shadow: 0px 0px 4px #333;
+  text-shadow: 0px 0px 3px #333;
 }
 
 .showcase-text-container p {
@@ -232,7 +237,7 @@ a.btn.btn-brand {
   max-width: 65%;
   text-align: center;
   margin: 1rem auto;
-  text-shadow: 0px 0px 4px #333;
+  text-shadow: 0px 0px 3px #333;
 }
 
 /* About */

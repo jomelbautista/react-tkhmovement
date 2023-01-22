@@ -4,7 +4,7 @@ import { testimonialDataArray } from "../data/testimonalData"
 
 const TestimonialCarousel = () => {
   return (
-    <Carousel fade>
+    <Carousel>
       {testimonialDataArray.map((testimonial) => (
         <Carousel.Item key={testimonial.id}>
           <Container className="testimonial w-75 h-100 mx-auto">
